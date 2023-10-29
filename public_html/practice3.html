@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>
+      Practice 3 Navarro
+    </title>
+
+    <style>
+      input {
+        margin-bottom: 10px;
+      }
+      
+      button {
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>EECS 348 Lab 7 Practice 3</h1>
+
+    <div class="container">
+      <div>
+        First Password
+        <input type="text" id="first-password">
+      </div>
+
+      <div>
+        Second Password
+        <input type="text" id="second-password">
+      </div>
+
+      <div>
+        <button onclick="validate()">Validate Passwords</button>
+      </div>
+    </div>
+
+    <script>
+      function validate() {
+        var pass1 = document.getElementById('first-password').value;
+        var pass2 = document.getElementById('second-password').value;
+
+        // if passwords are less than 8 char -> alert and/or if passwords dont match -> alert
+        // if passwords match and 8 char -> alert
+
+        if (pass1.length < 8 || pass2 < 8) {
+          alert("The length of your password(s) is less than 8 letters!");
+        }
+        if (pass1 !== pass2) {
+          alert("Your passwords don't match!");
+        }
+        if ((pass1 == pass2) && (pass1.length >= 8 && pass2.length >= 8)) {
+          alert("Everything looks great!");
+        }
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>
+      Practice 2 Navarro
+    </title>
+    <style>
+      .container {
+        display: flex;
+        flex-direction: column;
+      }
+
+      .user-input {
+        display: flex;
+      }
+
+      input {
+        margin: 12px;
+        height: 20px;
+        padding: 5px;
+      }
+
+      button {
+        width: 10%;
+        cursor: pointer;
+      }
+
+      .to-change {
+        border-style: solid;
+        padding: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>EECS 348 Lab 7 Practice 2</h1>
+
+    <p class="to-change">Change me!</p>
+
+    <div class="container">
+      <div class="user-input">
+        <p>Border R (0-255):</p>
+        <input id="border-r" type="text">
+      </div>
+
+      <div class="user-input">
+        <p>Border G (0-255):</p>
+        <input id="border-g" type="text">
+      </div>
+
+      <div class="user-input">
+        <p>Border B (0-255):</p>
+        <input id="border-b" type="text">
+      </div>
+
+      <div class="user-input">
+        <p>Border Width:</p>
+        <input id="border-width" type="text">
+      </div>
+
+      <div class="user-input">
+        <p>Background R (0-255):</p>
+        <input id="bg-r" type="text">
+      </div>
+
+      <div class="user-input">
+        <p>Background G (0-255):</p>
+        <input id="bg-g" type="text">
+      </div>
+
+      <div class="user-input">
+        <p>Background B (0-255):</p>
+        <input id="bg-b" type="text">
+      </div>
+
+      <button onclick="displayChange()">Change!</button>
+    </div>
+
+    <script>
+      function displayChange() {
+        const borderR = document.getElementById('border-r').value;
+        const borderG = document.getElementById('border-g').value;
+        const borderB = document.getElementById('border-b').value;
+        const borderWid = document.getElementById('border-width').value;
+        const bgR = document.getElementById('bg-r').value;
+        const bgG = document.getElementById('bg-g').value;
+        const bgB = document.getElementById('bg-b').value;
+
+        const toChange = document.querySelector('.to-change');  // bc the element is selected by its CLASS, id's use getElementById
+        toChange.style.border = `${borderWid}px solid rgb(${borderR}, ${borderG}, ${borderB})`;
+        toChange.style.backgroundColor = `rgb(${bgR}, ${bgG}, ${bgB})`;
+      }
+    </script>
+  </body>
+</html>
